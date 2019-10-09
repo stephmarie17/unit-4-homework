@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+#score-leaderboard {
+    margin: 10px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#time-spent {
+    margin: 10px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#quiz-area {
+    width: 100%;
+    max-width: 980px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+#start-quiz p {
+    margin: 20px;
+    padding: 20px;
+}
+
+button {
+    background-color: #9932CC;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
