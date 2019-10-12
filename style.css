@@ -1,13 +1,16 @@
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body {
     background-color: white;
     font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
 }
 
 #score-leaderboard {
@@ -34,7 +37,7 @@ body {
     text-align: center;
     position: relative;
     top: 100px;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
@@ -43,14 +46,35 @@ body {
     padding: 20px;
 }
 
-button {
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+}
+
+.btn {
     background-color: #9932CC;
-    color: white;
+    color: white; 
     font-size: 18px;
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
     cursor: pointer;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #9e54c4;
+}
+
+/* .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.hide {
+    display: none;
 }
 
 #score-leaderboard {

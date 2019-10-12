@@ -10,9 +10,9 @@ var questions = [
         answer: "alerts"
     },
     {
-        title: "The script source can only ever be placed in the HTML body.",
-        choices: ["true", "false"],
-        answer: "false"
+        title: "Where can a script source be placed in an HTML document?",
+        choices: ["head", "head or body", "body", "footer"],
+        answer: "head or body"
     },
     {
         title: "Which of the following is a block of code designed to perform a particular task?",
@@ -20,9 +20,8 @@ var questions = [
         answer: "function"
     },
     {
-        title: "Using 'for' does not require the use of a statement section.",
-        choices: ["true", "false"],
-        answer: "true"
-    },
-
+        title: "Which of the following is NOT a type of loop?",
+        choices: ["for", "while", "for/in", "method"],
+        answer: "method"
+    }
 ]
