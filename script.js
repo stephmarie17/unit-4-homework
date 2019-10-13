@@ -131,6 +131,7 @@ buttonChoices.addEventListener("click", function() {
 // });
 
 submitScore.addEventListener("click", function() {
+    alert("Your initials have been submitted!");
     var scoreInitials = document.getElementById("enter-intials").value;
 
     var playerScore = {
@@ -153,6 +154,7 @@ submitScore.addEventListener("click", function() {
     //     localStorage.setItem("initials", JSON.stringify(scoreNames));
     // }
     populateStorage(playerScore);
+    
 })
 
 // Event listener for when a user clicks on SCORE-LEADERBOARD
