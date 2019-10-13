@@ -18,6 +18,7 @@ var highscoresDisplay = document.getElementById("highscores");
 var leaderboardInitials = document.getElementById("initials-div");
 var leaderboardScore = document.getElementById("score-div");
 
+var returnToQuiz = document.getElementById("return-quiz");
 var highscoresLink = document.getElementById("score-leaderboard");
 var timerEl = document.getElementById("time-spent");
 var startTime = 75;
@@ -131,13 +132,19 @@ buttonChoices.addEventListener("click", function() {
 
 submitScore.addEventListener("click", function() {
     var scoreInitials = document.getElementById("enter-intials").value;
+
     var playerScore = {
-        initials: scoreInitials,
-        score: highscores
+        initials: [scoreInitials],
+        score: [highscores]
     }
+
     console.log(playerScore);
-    localStorage.setItem("player score", JSON.stringify(playerScore));
-    localStorage.setItem("initials", JSON.stringify(scoreInitials));
+
+    function populateStorage () {
+        localStorage.setItem("player score", JSON.stringify(playerScore));
+        localStorage.setItem("initials", JSON.stringify(scoreInitials));
+    }
+
     // scoreNames.push(scoreInitials);
     // console.log(highscores);
     // console.log(scoreNames); 
@@ -145,19 +152,30 @@ submitScore.addEventListener("click", function() {
     //     localStorage.setItem("score", JSON.stringify(highscores));
     //     localStorage.setItem("initials", JSON.stringify(scoreNames));
     // }
-    // populateStorage();
+    populateStorage(playerScore);
 })
 
 // Event listener for when a user clicks on SCORE-LEADERBOARD
 
 highscoresLink.addEventListener("click", function() {
-    highscoresDisplay.classList.remove("hide");
+
+    highscoresDisplay.classList.toggle("hide");
     quizLaunch.classList.add("hide");
     endQuizScreen.classList.add("hide");
+    highscoresLink.classList.toggle("hide");
+    returnToQuiz.classList.toggle("hide");
 
     var scoreList = JSON.parse(localStorage.getItem("playerScore"));
     
-    leaderboardInitials.textContent = scoreList.initials;
-    leaderboardScore.textContent = scoreList.highscore;
+    leaderboardInitials.append.textContent = scoreList.initials;
+    leaderboardScore.append.textContent = scoreList.highscore;
 
 })
+
+returnToQuiz.addEventListener("click", function () {
+    highscoresLink.classList.toggle("hide");
+    returnToQuiz.classList.toggle("hide");
+    quizLaunch.classList.toggle("hide");
+    highscoresDisplay.classList.toggle("hide");
+})
+
